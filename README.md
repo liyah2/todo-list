@@ -13,6 +13,5 @@ A simple todo list app built using React and Vite.
 ## Run the development server
 
 Run:
-
-'''bash
+bash
 npm run dev

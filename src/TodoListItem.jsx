@@ -6,7 +6,7 @@ function TodoListItem({ todo, onCompleteTodo }) {
         checked={todo.isCompleted}
         onChange={() => onCompleteTodo(todo.id)}
       />
-      {todo.title};
+      {todo.title}
     </li>
   );
 }

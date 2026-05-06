@@ -18,7 +18,7 @@ function App() {
 
   function completeTodo(id) {
     const updatedTodoList = todoList.map((todo) => {
-      if ((todo, id === id)) {
+      if (todo.id === id) {
         return { ...todo, isCompleted: true };
       }
       return todo;

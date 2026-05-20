@@ -1,9 +1,8 @@
 import { useState } from "react";
-import "./App.css";
-import TodoForm from "./features/Todos/TodoForm";
-import TodoList from "./features/Todos/TodoList/TodoList";
+import TodoForm from "./TodoForm";
+import TodoList from "./TodoList/TodoList";
 
-function App() {
+export default function TodosPage() {
   const [todoList, setTodoList] = useState([]);
 
   function addTodo(todoTitle) {
@@ -40,7 +39,6 @@ function App() {
 
   return (
     <div>
-      <h1>Todo List</h1>
       <TodoForm onAddTodo={addTodo} />
 
       <TodoList
@@ -51,5 +49,3 @@ function App() {
     </div>
   );
 }
-
-export default App;

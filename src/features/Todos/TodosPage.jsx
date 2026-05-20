@@ -114,8 +114,6 @@ export default function TodosPage({ token }) {
 
       if (!response.ok) {
         const errorText = await response.text();
-        console.log("completeTodo status:", response.status);
-        console.log("completeTodo error:", errorText);
         throw new Error("Failed to complete todo");
       }
     } catch (error) {
@@ -128,17 +126,47 @@ export default function TodosPage({ token }) {
     }
   }
 
-  const updateTodo = (editedTodo) => {
+  async function updateTodo(editedTodo) {
+    const originalTodo = todoList.find((todo) => todo.id === editedTodo.id);
+
     const updatedTodos = todoList.map((todo) => {
       if (todo.id === editedTodo.id) {
-        return { ...editedTodo };
+        return editedTodo;
       }
 
       return todo;
     });
 
     setTodoList(updatedTodos);
-  };
+    setError("");
+
+    try {
+      const response = await fetch(`/api/tasks/${editedTodo.id}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+          "X-CSRF-TOKEN": token,
+        },
+        credentials: "include",
+        body: JSON.stringify({
+          title: editedTodo.title,
+          isCompleted: editedTodo.isCompleted,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to update todo");
+      }
+    } catch (error) {
+      setTodoList((previous) =>
+        previous.map((todo) =>
+          todo.id === originalTodo.id ? originalTodo : todo
+        )
+      );
+
+      setError(error.message);
+    }
+  }
 
   return (
     <div>

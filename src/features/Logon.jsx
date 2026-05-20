@@ -25,9 +25,6 @@ export default function Logon({
       const text = await response.text();
       const data = text ? JSON.parse(text) : {};
 
-      console.log("login response status:", response.status);
-      console.log("login response data:", data);
-
       if (response.status === 200 && data.name && data.csrfToken) {
         onSetEmail(data.name);
         onSetToken(data.csrfToken);

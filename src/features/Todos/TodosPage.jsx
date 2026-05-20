@@ -108,11 +108,14 @@ export default function TodosPage({ token }) {
         body: JSON.stringify({
           title: originalTodo.title,
           isCompleted: true,
-          createdAt: originalTodo.createdAt,
+          //createdAt section caused an error where todos would not clear//
         }),
       });
 
       if (!response.ok) {
+        const errorText = await response.text();
+        console.log("completeTodo status:", response.status);
+        console.log("completeTodo error:", errorText);
         throw new Error("Failed to complete todo");
       }
     } catch (error) {

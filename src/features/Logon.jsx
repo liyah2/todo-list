@@ -22,7 +22,11 @@ export default function Logon({
         body: JSON.stringify({ email, password }),
       });
 
-      const data = await response.json();
+      const text = await response.text();
+      const data = text ? JSON.parse(text) : {};
+
+      console.log("login response status:", response.status);
+      console.log("login response data:", data);
 
       if (response.status === 200 && data.name && data.csrfToken) {
         onSetEmail(data.name);

@@ -6,7 +6,7 @@ import FilterInput from "../../shared/FilterInput";
 import useDebounce from "../../utils/useDebounce";
 
 export default function TodosPage({ token }) {
-  t[(todoList, setTodoList)] = useState([]);
+  const [todoList, setTodoList] = useState([]);
   const [error, setError] = useState("");
   const [filterError, setFilterError] = useState("");
   const [isTodoListLoading, setIsTodoListLoading] = useState(false);
@@ -21,6 +21,7 @@ export default function TodosPage({ token }) {
   };
 
   const invalidateCache = useCallback(() => {
+    console.log("Invalidating memo cache after todo mutation");
     setDataVersion((prev) => prev + 1);
   }, []);
 

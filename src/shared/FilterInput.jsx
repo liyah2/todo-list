@@ -1,4 +1,4 @@
-export default function FilterInput({ filterTerm, onFilterchange }) {
+export default function FilterInput({ filterTerm, onFilterChange }) {
   return (
     <div>
       <label htmlFor="filterInput">Search todos:</label>

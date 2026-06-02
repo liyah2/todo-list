@@ -7,7 +7,7 @@ export default function FilterInput({ filterTerm, onFilterChange }) {
         id="filterInput"
         type="text"
         value={filterTerm}
-        onChange={(event) => onFilterchange(event.target.value)}
+        onChange={(event) => onFilterChange(event.target.value)}
         placeholder="Search by title..."
       />
     </div>

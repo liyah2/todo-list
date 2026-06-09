@@ -1,8 +1,11 @@
 import "./App.css";
 import { Routes, Route } from "react-router";
 import Header from "./shared/Header";
+import HomePage from "./pages/HomePage";
+import LoginPage from "./pages/LoginPage";
+import AboutPage from "./pages/AboutPage";
+import NotFoundPage from "./pages/NotFoundPage";
 import TodosPage from "./features/Todos/TodosPage";
-import Logon from "./features/Logon";
 
 function App() {
   return (
@@ -10,9 +13,11 @@ function App() {
       <Header />
 
       <Routes>
-        <Route path="/login" element={<Logon />} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/about" element={<AboutPage />} />
         <Route path="/todos" element={<TodosPage />} />
-        <Route path="/" element={<Logon />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </div>
   );

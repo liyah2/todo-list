@@ -12,7 +12,7 @@ export default function HomePage() {
     } else {
       navigate("/login", { replace: true });
     }
-  } [isAuthenticated, navigate]);
+  }, [isAuthenticated, navigate]);
 
-  return <p>Redirecting...</p>
+  return <p>Redirecting...</p>;
 }

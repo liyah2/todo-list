@@ -1,16 +1,19 @@
 import "./App.css";
+import { Routes, Route } from "react-router";
 import Header from "./shared/Header";
 import TodosPage from "./features/Todos/TodosPage";
 import Logon from "./features/Logon";
-import { useAuth } from "./reducers/contexts/AuthContext";
 
 function App() {
-  const { isAuthenticated } = useAuth();
   return (
     <div>
       <Header />
 
-      {isAuthenticated ? <TodosPage /> : <Logon />}
+      <Routes>
+        <Route path="/login" element={<Logon />} />
+        <Route path="/todos" element={<TodosPage />} />
+        <Route path="/" element={<Logon />} />
+      </Routes>
     </div>
   );
 }

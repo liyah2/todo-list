@@ -5,7 +5,7 @@ import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
 import AboutPage from "./pages/AboutPage";
 import NotFoundPage from "./pages/NotFoundPage";
-import TodosPage from "./features/Todos/TodosPage";
+import TodosPage from "./pages/TodosPage";
 import RequireAuth from "./components/RequireAuth";
 import ProfilePage from "./pages/ProfilePage";
 

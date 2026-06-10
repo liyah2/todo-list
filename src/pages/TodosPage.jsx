@@ -1,18 +1,22 @@
 import { useCallback, useEffect, useReducer } from "react";
-import TodoForm from "./TodoForm";
-import TodoList from "./TodoList/TodoList";
-import SortBy from "../../shared/SortBy";
-import FilterInput from "../../shared/FilterInput";
-import useDebounce from "../../utils/useDebounce";
+import TodoForm from "../features/Todos/TodoForm";
+import TodoList from "../features/Todos/TodoList/TodoList";
+import SortBy from "../shared/SortBy";
+import FilterInput from "../shared/FilterInput";
+import useDebounce from "../utils/useDebounce";
 import {
   TODO_ACTIONS,
   initialTodoState,
   todoReducer,
-} from "../../reducers/todoReducer";
-import { useAuth } from "../../reducers/contexts/AuthContext";
+} from "../reducers/todoReducer";
+import { useAuth } from "../reducers/contexts/AuthContext";
+import { useSearchParams } from "react-router";
+import StatusFilter from "../shared/StatusFilter";
 
 export default function TodosPage() {
   const { token } = useAuth();
+  const [searchParams] = useSearchParams();
+  const statusFilter = searchParams.get("status") || "all";
   const [state, dispatch] = useReducer(todoReducer, initialTodoState);
 
   const {
@@ -178,7 +182,6 @@ export default function TodosPage() {
         body: JSON.stringify({
           title: originalTodo.title,
           isCompleted: true,
-          //createdAt section caused an error where todos would not clear//
         }),
       });
 
@@ -320,6 +323,9 @@ export default function TodosPage() {
           })
         }
       />
+
+      <StatusFilter />
+
       <FilterInput
         filterTerm={filterTerm}
         onFilterChange={handleFilterChange}
@@ -330,6 +336,7 @@ export default function TodosPage() {
         onCompleteTodo={completeTodo}
         onUpdateTodo={updateTodo}
         dataVersion={dataVersion}
+        statusFilter={statusFilter}
       />
     </div>
   );

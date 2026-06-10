@@ -26,7 +26,7 @@ function App() {
             </RequireAuth>
           }
         />
-        <Route path="*" element={<NotFoundPage />} />
+
         <Route
           path="/profile"
           element={
@@ -35,6 +35,8 @@ function App() {
             </RequireAuth>
           }
         />
+
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </div>
   );

@@ -1,8 +1,16 @@
+import { useNavigate } from "react-router";
 import { useAuth } from "../reducers/contexts/AuthContext";
 import Navigation from "./Navigation";
 
 export default function Header() {
   const { isAuthenticated, logout } = useAuth();
+
+  const navigate = useNavigate();
+
+  async function handleLogout() {
+    await logout();
+    navigate("/login");
+  }
 
   return (
     <header>
@@ -11,7 +19,7 @@ export default function Header() {
       <Navigation />
 
       {isAuthenticated && (
-        <button type="button" onClick={logout}>
+        <button type="button" onClick={handleLogout}>
           Log Out
         </button>
       )}

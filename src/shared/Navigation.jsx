@@ -6,7 +6,7 @@ export default function Navigation() {
 
   const navLinkStyle = ({ isActive }) => ({
     fontWeight: isActive ? "bold" : "normal",
-    TextDecoration: isActive ? "underline" : "none",
+    textDecoration: isActive ? "underline" : "none",
   });
 
   return (

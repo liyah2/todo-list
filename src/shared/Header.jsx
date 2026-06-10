@@ -1,4 +1,5 @@
 import { useAuth } from "../reducers/contexts/AuthContext";
+import Navigation from "./Navigation";
 
 export default function Header() {
   const { isAuthenticated, logout } = useAuth();

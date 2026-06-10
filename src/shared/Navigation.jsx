@@ -1,0 +1,47 @@
+import { NavLink } from "react-router";
+import { useAuth } from "../reducers/contexts/AuthContext";
+
+export default function Navigation() {
+  const { isAuthenticated } = useAuth();
+
+  const navLinkStyle = ({ isActive }) => ({
+    fontWeight: isActive ? "bold" : "normal",
+    TextDecoration: isActive ? "underline" : "none",
+  });
+
+  return (
+    <nav>
+      <ul
+        style={{ listStyle: "none", display: "flex", gap: "1rem", padding: 0 }}
+      >
+        <li>
+          <NavLink to="/about" style={navLinkStyle}>
+            About
+          </NavLink>
+        </li>
+
+        {isAuthenticated ? (
+          <>
+            <li>
+              <NavLink to="/todos" style={navLinkStyle}>
+                Todos
+              </NavLink>
+            </li>
+
+            <li>
+              <NavLink to="/profile" style={navLinkStyle}>
+                Profile
+              </NavLink>
+            </li>
+          </>
+        ) : (
+          <li>
+            <NavLink to="/login" style={navLinkStyle}>
+              Login
+            </NavLink>
+          </li>
+        )}
+      </ul>
+    </nav>
+  );
+}

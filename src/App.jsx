@@ -7,6 +7,7 @@ import AboutPage from "./pages/AboutPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import TodosPage from "./features/Todos/TodosPage";
 import RequireAuth from "./components/RequireAuth";
+import ProfilePage from "./pages/ProfilePage";
 
 function App() {
   return (
@@ -26,6 +27,14 @@ function App() {
           }
         />
         <Route path="*" element={<NotFoundPage />} />
+        <Route
+          path="/profile"
+          element={
+            <RequireAuth>
+              <ProfilePage />
+            </RequireAuth>
+          }
+        />
       </Routes>
     </div>
   );

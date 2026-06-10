@@ -4,16 +4,16 @@ import { useAuth } from "../reducers/contexts/AuthContext";
 import Logon from "../features/Logon";
 
 export default function LoginPage() {
-  const { iseAuthenticated } = useAuth();
+  const { isAuthenticated } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
 
   const from = location.state?.from?.pathname || "/todos";
 
   useEffect(() => {
-    if (iseAuthenticated) {
+    if (isAuthenticated) {
       navigate(from, { replace: true });
     }
-  }, [iseAuthenticated, navigate, from]);
+  }, [isAuthenticated, navigate, from]);
   return <Logon />;
 }

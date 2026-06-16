@@ -112,6 +112,7 @@
   background: #f3eedf;
   padding: 0.85rem 1rem;
   box-shadow: 4px 4px 0 #d94c2f;
+  transition: transform 0.15s ease;
 }
 
 .todo-item.completed {
@@ -122,6 +123,10 @@
   display: flex;
   align-items: center;
   gap: 0.75rem;
+}
+
+.todo-item:hover {
+  transform: translateY(-2px);
 }
 
 .todo-title {
@@ -151,7 +156,7 @@
 .task-list-panel {
   border: 3px solid #2d2926;
   background: #f3eedf;
-  padding: 1rem;
+  padding: 1.5rem;
   margin-top: 1.25rem;
   box-shadow: 5px 5px 0 #d94c2f;
 }
@@ -167,11 +172,23 @@
 }
 
 .control-grid {
-  display: grid;
-  gap: 1rem;
+  display: flex;
+  align-items: flex-end;
+  gap: 1.5rem;
+  flex-wrap: wrap;
 }
 
-.control-grid > div,
+.control-grid > div {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.control-grid label {
+  white-space: nowrap;
+}
+
 .add-task-panel form {
   display: flex;
   align-items: center;

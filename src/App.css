@@ -7,3 +7,47 @@
   margin: 0 auto;
   padding: 2rem 0;
 }
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid #d1d5db;
+}
+
+.app-title {
+  margin: 0;
+  color: #2563eb;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-list a {
+  color: #374151;
+  text-decoration: none;
+}
+
+.nav-list a:hover {
+  color: #2563eb;
+}
+
+.logout-btn {
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  background: #1d4ed8;
+}

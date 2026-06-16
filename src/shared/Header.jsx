@@ -13,7 +13,7 @@ export default function Header() {
   }
 
   return (
-    <header>
+    <header className="header">
       <h1>Todo List</h1>
 
       <Navigation />

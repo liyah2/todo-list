@@ -11,7 +11,7 @@ import ProfilePage from "./pages/ProfilePage";
 
 function App() {
   return (
-    <div>
+    <div className="app">
       <Header />
 
       <Routes>

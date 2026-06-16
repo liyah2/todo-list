@@ -10,8 +10,9 @@ export default function Navigation() {
   });
 
   return (
-    <nav>
+    <nav className="nav">
       <ul
+        className="nav-list"
         style={{ listStyle: "none", display: "flex", gap: "1rem", padding: 0 }}
       >
         <li>

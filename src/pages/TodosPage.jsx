@@ -302,43 +302,58 @@ export default function TodosPage() {
       {isTodoListLoading && todoList.length === 0 && <p>Loading todos...</p>}
       <h2 className="section-title">Today&apos;s Tasks</h2>
 
-      <SortBy
-        sortBy={sortBy}
-        sortDirection={sortDirection}
-        onSortByChange={(newSortBy) =>
-          dispatch({
-            type: TODO_ACTIONS.SET_SORT,
-            payload: {
-              sortBy: newSortBy,
-              sortDirection,
-            },
-          })
-        }
-        onSortDirectionChange={(newDirection) =>
-          dispatch({
-            type: TODO_ACTIONS.SET_SORT,
-            payload: {
-              sortBy,
-              sortDirection: newDirection,
-            },
-          })
-        }
-      />
+      <section className="control-panel">
+        <h3>Organize Tasks</h3>
 
-      <StatusFilter />
+        <div className="control-grid">
+          <SortBy
+            sortBy={sortBy}
+            sortDirection={sortDirection}
+            onSortByChange={(newSortBy) =>
+              dispatch({
+                type: TODO_ACTIONS.SET_SORT,
+                payload: {
+                  sortBy: newSortBy,
+                  sortDirection,
+                },
+              })
+            }
+            onSortDirectionChange={(newDirection) =>
+              dispatch({
+                type: TODO_ACTIONS.SET_SORT,
+                payload: {
+                  sortBy,
+                  sortDirection: newDirection,
+                },
+              })
+            }
+          />
 
-      <FilterInput
-        filterTerm={filterTerm}
-        onFilterChange={handleFilterChange}
-      />
-      <TodoForm onAddTodo={addTodo} />
-      <TodoList
-        todoList={todoList}
-        onCompleteTodo={completeTodo}
-        onUpdateTodo={updateTodo}
-        dataVersion={dataVersion}
-        statusFilter={statusFilter}
-      />
+          <StatusFilter />
+
+          <FilterInput
+            filterTerm={filterTerm}
+            onFilterChange={handleFilterChange}
+          />
+        </div>
+      </section>
+
+      <section className="add-task-panel">
+        <h3>Add New Task</h3>
+        <TodoForm onAddTodo={addTodo} />
+      </section>
+
+      <section className="task-list-panel">
+        <h3>Task List</h3>
+
+        <TodoList
+          todoList={todoList}
+          onCompleteTodo={completeTodo}
+          onUpdateTodo={updateTodo}
+          dataVersion={dataVersion}
+          statusFilter={statusFilter}
+        />
+      </section>
     </main>
   );
 }

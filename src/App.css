@@ -82,3 +82,141 @@
   transform: translate(-1px, -1px);
   box-shadow: 4px 4px 0 #2d2926;
 }
+
+.todo-board {
+  background: #fff8e6;
+  border: 4px solid #2d2926;
+  padding: 1.5rem;
+  box-shadow: 8px 8px 0 #2d2926;
+}
+
+.section-title {
+  margin: 0 0 1rem;
+  font-family: "Anton", sans-serif;
+  font-size: 2.5rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #2d2926;
+}
+
+.todo-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.todo-item {
+  border: 2px solid #2d2926;
+  background: #f3eedf;
+  padding: 0.85rem 1rem;
+  box-shadow: 4px 4px 0 #d94c2f;
+}
+
+.todo-item.completed {
+  background: #e7dcc2;
+}
+
+.todo-item-form {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.todo-title {
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.todo-title:hover {
+  text-decoration: underline;
+}
+
+.todo-item.completed .todo-title {
+  text-decoration: line-through;
+  color: #6b6257;
+}
+
+.empty-state {
+  border: 2px dashed #2d2926;
+  padding: 1rem;
+  background: #f3eedf;
+  font-weight: 700;
+}
+
+.control-panel,
+.add-task-panel,
+.task-list-panel {
+  border: 3px solid #2d2926;
+  background: #f3eedf;
+  padding: 1rem;
+  margin-top: 1.25rem;
+  box-shadow: 5px 5px 0 #d94c2f;
+}
+
+.control-panel h3,
+.add-task-panel h3,
+.task-list-panel h3 {
+  margin: 0 0 1rem;
+  font-family: "Anton", sans-serif;
+  font-size: 1.6rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.control-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.control-grid > div,
+.add-task-panel form {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+label {
+  font-weight: 800;
+}
+
+input,
+select {
+  border: 2px solid #2d2926;
+  background: #fffdf6;
+  padding: 0.6rem;
+  min-height: 44px;
+}
+
+input:focus,
+select:focus,
+button:focus {
+  outline: 3px solid #f2b632;
+  outline-offset: 2px;
+}
+
+button {
+  border: 2px solid #2d2926;
+  background: #f2b632;
+  color: #2d2926;
+  padding: 0.6rem 0.9rem;
+  min-height: 44px;
+  cursor: pointer;
+  font-weight: 800;
+  text-transform: uppercase;
+  box-shadow: 3px 3px 0 #2d2926;
+}
+
+button:hover:not(:disabled) {
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0 #2d2926;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  box-shadow: none;
+}

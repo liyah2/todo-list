@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import TextInputWithLabel from "../../shared/TextInputWithLabel";
 import { isValidTodoTitle } from "../../utils/todoValidation";
+import DOMPurify from "dompurify";
 
 function TodoForm({ onAddTodo }) {
   const inputRef = useRef();
@@ -9,7 +10,7 @@ function TodoForm({ onAddTodo }) {
   const handleAddTodo = (event) => {
     event.preventDefault();
 
-    const todoTitle = workingTodoTitle.trim();
+    const todoTitle = DOMPurify.sanitize(workingTodoTitle.trim());
 
     if (todoTitle) {
       onAddTodo(todoTitle);

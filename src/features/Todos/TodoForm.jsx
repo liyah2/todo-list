@@ -10,13 +10,15 @@ function TodoForm({ onAddTodo }) {
   const handleAddTodo = (event) => {
     event.preventDefault();
 
+    if (!isValidTodoTitle(workingTodoTitle)) {
+      return;
+    }
+
     const todoTitle = DOMPurify.sanitize(workingTodoTitle.trim());
 
-    if (todoTitle) {
-      onAddTodo(todoTitle);
-      setWorkingTodoTitle("");
-      inputRef.current.focus();
-    }
+    onAddTodo(todoTitle);
+    setWorkingTodoTitle("");
+    inputRef.current.focus();
   };
 
   return (

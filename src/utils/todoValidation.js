@@ -1,3 +1,5 @@
 export function isValidTodoTitle(title) {
-  return title.trim() !== "";
+  const trimmedTitle = title.trim();
+
+  return trimmedTitle.length > 0 && trimmedTitle.length <= 100;
 }

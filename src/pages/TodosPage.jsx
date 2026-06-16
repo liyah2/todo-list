@@ -256,7 +256,7 @@ export default function TodosPage() {
   }
 
   return (
-    <div>
+    <main className="todo-board">
       {error && (
         <div>
           <p>{error}</p>
@@ -300,6 +300,7 @@ export default function TodosPage() {
         </div>
       )}
       {isTodoListLoading && todoList.length === 0 && <p>Loading todos...</p>}
+      <h2 className="section-title">Today&apos;s Tasks</h2>
 
       <SortBy
         sortBy={sortBy}
@@ -338,6 +339,6 @@ export default function TodosPage() {
         dataVersion={dataVersion}
         statusFilter={statusFilter}
       />
-    </div>
+    </main>
   );
 }

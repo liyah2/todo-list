@@ -45,7 +45,7 @@ export function AuthProvider({ children }) {
         success: false,
         error: `Authentication failed: ${data?.message || "Unknown error"}`,
       };
-    } catch (error) {
+    } catch {
       return {
         success: false,
         error: "Network error during login",

@@ -12,6 +12,7 @@ import {
 import { useAuth } from "../reducers/contexts/AuthContext";
 import { useSearchParams } from "react-router";
 import StatusFilter from "../shared/StatusFilter";
+import styles from "../App.module.css";
 
 export default function TodosPage() {
   const { token } = useAuth();
@@ -256,7 +257,7 @@ export default function TodosPage() {
   }
 
   return (
-    <main className="todo-board">
+    <main className={styles["todo-board"]}>
       {error && (
         <div>
           <p>{error}</p>
@@ -300,12 +301,12 @@ export default function TodosPage() {
         </div>
       )}
       {isTodoListLoading && todoList.length === 0 && <p>Loading todos...</p>}
-      <h2 className="section-title">Today&apos;s Tasks</h2>
+      <h2 className={styles["section-title"]}>Today&apos;s Tasks</h2>
 
-      <section className="control-panel">
+      <section className={styles["control-panel"]}>
         <h3>Organize Tasks</h3>
 
-        <div className="control-grid">
+        <div className={styles["control-grid"]}>
           <SortBy
             sortBy={sortBy}
             sortDirection={sortDirection}
@@ -338,12 +339,12 @@ export default function TodosPage() {
         </div>
       </section>
 
-      <section className="add-task-panel">
+      <section className={styles["add-task-panel"]}>
         <h3>Add New Task</h3>
         <TodoForm onAddTodo={addTodo} />
       </section>
 
-      <section className="task-list-panel">
+      <section className={styles["task-list-panel"]}>
         <h3>Task List</h3>
 
         <TodoList

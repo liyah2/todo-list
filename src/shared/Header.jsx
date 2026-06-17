@@ -15,16 +15,16 @@ export default function Header() {
 
   return (
     <header className={styles.header}>
-      <div className={styles.titleBox}>
-        <h1 className={styles.appTitle}>Todo List</h1>
+      <div className={styles["title-box"]}>
+        <h1 className={styles["app-title"]}>Todo List</h1>
       </div>
 
-      <div className={styles.headerActions}>
+      <div className={styles["header-actions"]}>
         <Navigation />
 
         {isAuthenticated && (
           <button
-            className={styles.logoutBtn}
+            className={styles["logout-btn"]}
             type="button"
             onClick={handleLogout}
           >

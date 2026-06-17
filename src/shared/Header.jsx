@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router";
 import { useAuth } from "../reducers/contexts/AuthContext";
 import Navigation from "./Navigation";
+import styles from "../App.module.css";
 
 export default function Header() {
   const { isAuthenticated, logout } = useAuth();
@@ -13,16 +14,20 @@ export default function Header() {
   }
 
   return (
-    <header className="header">
-      <div className="title-box">
-        <h1 className="app-title">Todo List</h1>
+    <header className={styles.header}>
+      <div className={styles.titleBox}>
+        <h1 className={styles.appTitle}>Todo List</h1>
       </div>
 
-      <div className="header-actions">
+      <div className={styles.headerActions}>
         <Navigation />
 
         {isAuthenticated && (
-          <button className="logout-btn" type="button" onClick={handleLogout}>
+          <button
+            className={styles.logoutBtn}
+            type="button"
+            onClick={handleLogout}
+          >
             Log Out
           </button>
         )}

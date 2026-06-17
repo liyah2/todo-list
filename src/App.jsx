@@ -1,4 +1,4 @@
-import "./App.css";
+import styles from "./App.module.css";
 import { Routes, Route } from "react-router";
 import Header from "./shared/Header";
 import HomePage from "./pages/HomePage";
@@ -11,7 +11,7 @@ import ProfilePage from "./pages/ProfilePage";
 
 function App() {
   return (
-    <div className="app">
+    <div className={styles.app}>
       <Header />
 
       <Routes>

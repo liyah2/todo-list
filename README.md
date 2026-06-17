@@ -78,3 +78,39 @@ This application includes:
 - Dark mode
 - Drag-and-drop task organization
 - Timer for timed tasks
+
+## Live Demo Link
+
+Pending
+
+## Screenshots
+
+### Desktop View
+
+![Desktop Screenshot](./public/screenshots/Screenshot%202026-06-17%20at%2012.52.02 AM.png)
+
+### Mobile View
+
+![Mobile Screenshot](<./public/screenshots/localhost_3001_todos(iPhone%2014%20Pro%20Max).png>)
+
+## Design Decisions
+
+I chose a custom CSS approach to create a retro-inspired user interface that gives the app a unique visual identity, instead of a generic look. The goal was to transform the default Todo application into something that felt more portfolio-ready while maintaining readability and accessibility.
+
+Key design decisions included:
+
+- Using a bold display font for strong visual hierarchy
+- Creating a retro color palette with high contrast
+- Organizing content into clearly defined sections
+- Adding visual feedback for user interactions and completed tasks
+- Maintaining responsive layouts for different screen sizes
+
+## License
+
+This project is licensed under the MIT License.
+
+## Contact Information
+
+GitHub: https://github.com/liyah2
+
+Portfolio: https://github.com/liyah2

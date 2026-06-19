@@ -11,11 +11,8 @@ export default function Navigation() {
   });
 
   return (
-    <nav className={styles.nav}>
-      <ul
-        className={styles["nav-list"]}
-        style={{ listStyle: "none", display: "flex", gap: "1rem", padding: 0 }}
-      >
+    <nav>
+      <ul className={styles["nav-list"]}>
         <li>
           <NavLink to="/about" style={navLinkStyle}>
             About

@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f3eedf;
+  color: #2d2926;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}

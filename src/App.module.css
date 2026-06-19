@@ -1,0 +1,239 @@
+#root {
+  min-height: 100vh;
+}
+
+.app {
+  width: min(100% -2rem, 900px);
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.header {
+  margin-bottom: 2rem;
+}
+
+.title-box {
+  border: 4px solid #2d2926;
+  background: #2d2926;
+  padding: 0.6rem 1rem;
+  text-align: center;
+  box-shadow: 6px 6px 0 #d94c2f;
+}
+
+.app-title {
+  margin: 0;
+  color: #f3eedf;
+  font-family: "Anton", sans-serif;
+  font-size: clamp(3rem, 11vw, 7rem);
+  font-weight: 400;
+  line-height: 0.9;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 0.75rem;
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap;
+}
+
+.nav-list a {
+  display: inline-block;
+  border: 2px solid #2d2926;
+  padding: 0.5rem 0.85rem;
+  background: #f2b632;
+  color: #2d2926;
+  text-decoration: none;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  box-shadow: 3px 3px 0 #2d2926;
+}
+
+.nav-list a:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0 #2d2926;
+}
+
+.logout-btn {
+  border: 2px solid #2d2926;
+  padding: 0.5rem 0.85rem;
+  background: #d94c2f;
+  color: #fffdf6;
+  cursor: pointer;
+  font-weight: 800;
+  text-transform: uppercase;
+  box-shadow: 3px 3px 0 #2d2926;
+}
+
+.logout-btn:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0 #2d2926;
+}
+
+.todo-board {
+  background: #fff8e6;
+  border: 4px solid #2d2926;
+  padding: 1.5rem;
+  box-shadow: 8px 8px 0 #2d2926;
+}
+
+.section-title {
+  margin: 0 0 1rem;
+  font-family: "Anton", sans-serif;
+  font-size: 2.5rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #2d2926;
+}
+
+.todo-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.todo-item {
+  border: 2px solid #2d2926;
+  background: #f3eedf;
+  padding: 0.85rem 1rem;
+  box-shadow: 4px 4px 0 #d94c2f;
+  transition: transform 0.15s ease;
+}
+
+.todo-item.completed {
+  background: #e7dcc2;
+}
+
+.todo-item-form {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.todo-item:hover {
+  transform: translateY(-2px);
+}
+
+.todo-title {
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.todo-title:hover {
+  text-decoration: underline;
+}
+
+.todo-item.completed .todo-title {
+  text-decoration: line-through;
+  color: #6b6257;
+}
+
+.empty-state {
+  border: 2px dashed #2d2926;
+  padding: 1rem;
+  background: #f3eedf;
+  font-weight: 700;
+}
+
+.control-panel,
+.add-task-panel,
+.task-list-panel {
+  border: 3px solid #2d2926;
+  background: #f3eedf;
+  padding: 1.5rem;
+  margin-top: 1.25rem;
+  box-shadow: 5px 5px 0 #d94c2f;
+}
+
+.control-panel h3,
+.add-task-panel h3,
+.task-list-panel h3 {
+  margin: 0 0 1rem;
+  font-family: "Anton", sans-serif;
+  font-size: 1.6rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.control-grid {
+  display: flex;
+  align-items: flex-end;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.control-grid > div {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.control-grid label {
+  white-space: nowrap;
+}
+
+.add-task-panel form {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+label {
+  font-weight: 800;
+}
+
+input,
+select {
+  border: 2px solid #2d2926;
+  background: #fffdf6;
+  padding: 0.6rem;
+  min-height: 44px;
+}
+
+input:focus,
+select:focus,
+button:focus {
+  outline: 3px solid #f2b632;
+  outline-offset: 2px;
+}
+
+button {
+  border: 2px solid #2d2926;
+  background: #f2b632;
+  color: #2d2926;
+  padding: 0.6rem 0.9rem;
+  min-height: 44px;
+  cursor: pointer;
+  font-weight: 800;
+  text-transform: uppercase;
+  box-shadow: 3px 3px 0 #2d2926;
+}
+
+button:hover:not(:disabled) {
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0 #2d2926;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  box-shadow: none;
+}

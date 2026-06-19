@@ -81,7 +81,7 @@ This application includes:
 
 ## Live Demo Link
 
-Pending
+https://youtu.be/etlwClKS1us
 
 ## Screenshots
 
